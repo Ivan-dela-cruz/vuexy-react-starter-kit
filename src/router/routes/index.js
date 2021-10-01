@@ -9,25 +9,26 @@ const DefaultRoute = '/home'
 // ** Merge Routes
 const Routes = [
   {
-    path: '/home',
-    component: lazy(() => import('../../views/Home'))
+    path: '/error',
+    component: lazy(() => import('../../components/public/error/Error')),
+    layout: 'BlankLayout'
   },
   {
-    path: '/second-page',
-    component: lazy(() => import('../../views/SecondPage'))
+    path: '/home',
+    component: lazy(() => import('../../components/public/home/Home')),
+    layout: 'BlankLayout'
   },
   {
     path: '/login',
-    component: lazy(() => import('../../views/Login')),
-    layout: 'BlankLayout',
+    component: lazy(() => import('../../components/public/login/LoginV2')),
+    layout: 'BlankLayout'
+  },
+  {
+    path: '/second-page',
+    component: lazy(() => import('../../components/user/second-page/SecondPage')),
     meta: {
       authRoute: true
     }
-  },
-  {
-    path: '/error',
-    component: lazy(() => import('../../views/Error')),
-    layout: 'BlankLayout'
   }
 ]
 
